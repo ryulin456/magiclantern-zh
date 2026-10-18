@@ -1,0 +1,10 @@
+diff a/work/src-lua-fix-zh/src/menu.c b/work/src-lua-fix-zh/src/menu.c	(rejected hunks)
+@@ -4256,7 +4377,7 @@ submenu_display(struct menu *submenu)
+         w = 720 - 2 * bx;
+         bmp_fill(MENU_BG_COLOR_HEADER_FOOTER,  bx,  by, w, 40);
+         bmp_fill(COLOR_BLACK,  bx,  by + 40, w, h-40);
+-        bmp_printf(FONT(FONT_CANON, COLOR_WHITE, NO_BG_ERASE),  bx + 15,  by + 2, "%s", submenu->name);
++        bmp_printf(FONT(FONT_CANON, COLOR_WHITE, NO_BG_ERASE),  bx + 15,  by + 2, "%s", zh_cn_translate(submenu->name));
+ 
+         for (int i = 0; i < 5; i++)
+             bmp_draw_rect(45,  bx - i,  by - i, w + i * 2, h + i * 2);

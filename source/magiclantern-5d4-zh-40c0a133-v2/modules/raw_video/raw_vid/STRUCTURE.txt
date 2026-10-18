@@ -1,0 +1,20 @@
+This module uses DryOS msg queues as the primary synchronisation and
+serialisation primitive.
+
+event_pusher.c: vsync and key press events are read here, and any
+                required actions pushed to the queue.
+worker.c: reads events and dispatches them.
+raw_vid.c: holds the top-level module stuff, init funcs etc.
+
+We have multiple async events controlling our state.  E.g. key presses,
+events triggering on vsync callback.  mlv_lite needs complex logic to try
+and do this correctly in one file.  Here I am trying to enforce clean
+separation by having the only reader of the queue in a separate .c file;
+worker.c.
+
+Everything posts to one queue, which serialises the order for free.
+Separating the code into files forces discipline re global state;
+you must talk via well-defined interfaces.  These are kept minimal.
+
+In general I have found this makes thinking about the code considerably
+easier compared to mlv_lite.  Especially for the threaded parts!

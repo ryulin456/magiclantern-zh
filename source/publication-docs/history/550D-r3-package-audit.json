@@ -1,0 +1,39 @@
+[
+  {
+    "model": "550D.109",
+    "version": "2025-06-20.550D.109",
+    "output": "magiclantern.2025-06-20.550D.109.zh-CN.r3-FULL-MODULES-LOW-MEMORY-TEST-ONLY.zip",
+    "sha256": "8eddd6e4070175d8da3e6956556acb37804191efed78f08724f7c392c25b8a76",
+    "size": 2028223,
+    "modules": 17,
+    "hidden_markers": 0,
+    "quarantined": [],
+    "added": [
+      "ML/doc/OFL-NotoSansSC.txt",
+      "ML/fonts/zh_cn.bfn",
+      "ML/fonts/zh_cn.lng"
+    ],
+    "removed": [],
+    "changed": [
+      "ML/modules/550D_109.sym",
+      "ML/modules/adv_int.mo",
+      "ML/modules/arkanoid.mo",
+      "ML/modules/autoexpo.mo",
+      "ML/modules/bench.mo",
+      "ML/modules/deflick.mo",
+      "ML/modules/dual_iso.mo",
+      "ML/modules/edmac.mo",
+      "ML/modules/ettr.mo",
+      "ML/modules/file_man.mo",
+      "ML/modules/img_name.mo",
+      "ML/modules/lua.mo",
+      "ML/modules/mlv_lite.mo",
+      "ML/modules/mlv_play.mo",
+      "ML/modules/mlv_snd.mo",
+      "ML/modules/pic_view.mo",
+      "ML/modules/selftest.mo",
+      "ML/modules/silent.mo",
+      "autoexec.bin"
+    ]
+  }
+]

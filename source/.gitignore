@@ -1,0 +1,10 @@
+**/build/
+**/__pycache__/
+*.pyc
+*.o
+*.mo
+*.elf
+*.log
+.env
+.env.*
+Makefile.user

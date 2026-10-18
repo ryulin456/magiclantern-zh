@@ -1,0 +1,29 @@
+Magic Lantern zh-CN experimental build r8
+==========================================
+
+Target: Canon EOS 5D Mark III / Canon firmware 1.2.3 only
+Upstream source commit: ed3e7c0dfacfdeaf3349dee73edf9e3621217462
+Build date: 2026-08-21
+Translation dictionary: 1152 entries
+Compact BFNT face: 830 glyphs
+Localization attribution: ryulin456
+Displayed Magic Lantern version: 2025-06-20.5D3.123
+Startup page policy: once after each camera power-on
+Module symbol-table validation: all 19 bundled modules resolve against 5D3_123.sym
+Physical-camera test of r8: NOT PERFORMED
+
+Original archive SHA-256:
+63CA9E56405573CE58F9FCA2680D17BB87CE57A5B946F66AFC2CBB16CCF00D77
+
+r8 replaces both autoexec.bin and ML/modules/5D3_123.sym from one link output.
+This prevents stale main-program addresses from being applied while loading modules.
+
+Modified payload SHA-256:
+autoexec.bin
+A2968BDEE9CCCC6A72C7E6747FAFBC9668D03CECA007C0E3D514F4D037ABF502
+
+ML/modules/5D3_123.sym
+46D139D1DCD5002796090FE6611A4F0D0F02CB8345921B3F15E5D92EF93FD1B5
+
+ML/fonts/zh_cn.bfn
+5DCE91C47AC03E0C331B724D4099CD92D83B092B554F6D0D379C6AFE26A7B6F7

@@ -1,0 +1,34 @@
+Package status: STATIC AUDIT PASSED / 70D REAL-CAMERA TEST REQUIRED
+Camera: Canon EOS 70D
+Required Canon firmware: 1.1.2
+Embedded Magic Lantern version: 2025-06-20.70D.112
+Upstream commit label: ed3e7c0
+Embedded build timestamp: 2026-08-30 14:20:08 UTC
+Build publisher: ryulin456@gmail.com
+Localization revision: r3-MEMORY-SAFE
+
+Safety change:
+- zh_cn.bfn and zh_cn.lng are persistent resources.
+- They are now read in <= 32 KiB temporary DMA chunks.
+- The temporary I/O buffer is freed before the loader returns.
+- The persistent copy uses non-DMA malloc and is not retained in shoot_malloc.
+
+Static audit summary:
+- Core menu strings: 804/804 translated; missing 0.
+- Module fixed UI strings: 525/525 translated.
+- Dynamic module formats: 51/51 translated across 72 call sites.
+- Format placeholders: 123/123 compatible.
+- Module count: 19/19; no module removed.
+- Module undefined symbols: all have providers.
+- Language entries: 2050; sorted and unique.
+- BFNT glyphs: 921; required character coverage complete.
+- Module summaries: 19 one-line summaries; widest 463 px.
+- Module descriptions: 19 complete; minimum 10 spare lines.
+- Linked .bss end: 0x4C9800.
+- 70D fixed reservation end: 0x4E0000.
+- Static reservation margin: 0x16800 bytes (90 KiB).
+- ML-SETUP.FIR is the original 70D.112 installer file.
+- No ML/SETTINGS/*.en files are packaged.
+
+This report is not evidence of real-camera boot or functional compatibility.
+

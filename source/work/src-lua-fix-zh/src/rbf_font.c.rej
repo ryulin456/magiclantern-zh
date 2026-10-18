@@ -1,0 +1,71 @@
+diff a/work/src-lua-fix-zh/src/rbf_font.c b/work/src-lua-fix-zh/src/rbf_font.c	(rejected hunks)
+@@ -27,6 +27,11 @@ struct font font_dynamic[MAX_DYN_FONTS+1];
+ static char *dyn_font_name[MAX_DYN_FONTS+1];
+ uint32_t dyn_fonts = 0;
+ 
++bfnt_font *BFNT_ALT_FONT = 0;
++uint8_t *BFNT_ALT_CHAR_CODES = 0;
++uint8_t *BFNT_ALT_BITMAP_OFFSET = 0;
++uint8_t *BFNT_ALT_BITMAP_DATA = 0;
++
+ #ifdef CONFIG_NO_BFNT
+ /* kitor: Those replace entries in platform consts.h for DIGIC6+
+  *        that does not use BMP fonts anymore.  */
+@@ -370,7 +443,7 @@ static int FAST rbf_draw_char(font *rbf_font, int x, int y, int ch, int fontspec
+     }
+ #endif
+     ml_refresh_display_needed = 1;
+-    return rbf_font->wTable[ch];
++    return width;
+ }
+ 
+ 
+@@ -602,6 +714,38 @@ struct font font_large;
+ struct font font_canon;
+ 
+ 
++static int bfnt_load_alt_from_card()
++{
++    const char *filename = "ML/FONTS/zh_cn.bfn";
++    uint32_t size;
++
++    if (FIO_GetFileSize(filename, &size) != 0 || size < sizeof(bfnt_font))
++        return 1;
++
++    BFNT_ALT_FONT = (bfnt_font *) read_entire_file(filename, (int *) &size);
++    if (!BFNT_ALT_FONT)
++        return 2;
++
++    if (BFNT_ALT_FONT->magic != 0x00544e46 ||
++        BFNT_ALT_FONT->charmap_offset < sizeof(bfnt_font) ||
++        (BFNT_ALT_FONT->charmap_size & 3) ||
++        BFNT_ALT_FONT->charmap_offset > size ||
++        BFNT_ALT_FONT->charmap_size > size - BFNT_ALT_FONT->charmap_offset ||
++        BFNT_ALT_FONT->charmap_size > size - BFNT_ALT_FONT->charmap_offset - BFNT_ALT_FONT->charmap_size ||
++        BFNT_ALT_FONT->bitmap_size > size - BFNT_ALT_FONT->charmap_offset - 2 * BFNT_ALT_FONT->charmap_size)
++    {
++        free(BFNT_ALT_FONT);
++        BFNT_ALT_FONT = 0;
++        return 3;
++    }
++
++    BFNT_ALT_CHAR_CODES = (uint8_t *) BFNT_ALT_FONT + BFNT_ALT_FONT->charmap_offset;
++    BFNT_ALT_BITMAP_OFFSET = BFNT_ALT_CHAR_CODES + BFNT_ALT_FONT->charmap_size;
++    BFNT_ALT_BITMAP_DATA = BFNT_ALT_BITMAP_OFFSET + BFNT_ALT_FONT->charmap_size;
++    return 0;
++}
++
++
+ #ifdef CONFIG_NO_BFNT
+ //-------------------------------------------------------------------
+ // Load bitmap.bfn from card
+@@ -642,6 +786,9 @@ void _load_fonts()
+         return;
+     fonts_loaded = 1;
+ 
++    int alt_bfnt_status = bfnt_load_alt_from_card();
++    DryosDebugMsg(0, 15, "alternate BFNT status: %d", alt_bfnt_status);
++
+     int bfnt_status = -1;
+ 
+     #ifdef CONFIG_NO_BFNT

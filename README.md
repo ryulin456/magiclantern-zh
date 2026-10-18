@@ -17,6 +17,7 @@
 <p align="center">
   <a href="#项目介绍">项目介绍</a> ·
   <a href="#测试状态">测试状态</a> ·
+  <a href="#源码与构建">源码</a> ·
   <a href="#安装前必读">安装说明</a> ·
   <a href="#问题反馈">问题反馈</a> ·
   <a href="SUPPORT.md">捐赠支持</a>
@@ -58,6 +59,25 @@
 | 仓库内其他机型 | 🚧 待社区反馈 | 请严格核对机型与佳能固件版本 |
 
 “已实机测试”不代表适用于所有镜头、设置或使用场景；请从低风险场景开始验证。
+
+## 源码与构建
+
+2026-10-18 已整理并公开四套源码树，包含多机型中文版工程、独立 5D4 开发工程，以及 **5D3 Live AF r21 自动对焦模块源码**。
+
+- [源码总览与目录](source/README.md)
+- [5D3 Live AF r21 实现](source/magiclantern-zh-src/modules/af_frame_common.c) · [模块入口与 Makefile](source/magiclantern-zh-src/modules/af_live/)
+- [21 个目标的版本与源码对应表](source/publication-docs/FIRMWARE-SOURCE-MAP.md)
+- [构建说明](source/BUILDING.md) · [r21 模块复现验证](source/publication-docs/AF-BUILD-VERIFICATION.md)
+
+r21 自动对焦模块已从导出源码重新编译，结果与发布模块哈希一致。**原始 5D3 experimental-r9 汉化核心及旧模块的精确修改源码尚未找回**，因此本目录不能声称是所有历史二进制的完整对应源码。具体边界见[已知问题](source/publication-docs/KNOWN-ISSUES.md)。
+
+**7D / 1200D 请使用修正后的 r2：**旧 r1 包误选了 870 字节的 5DC 辅助文件作为核心，现已修复。新包只更换正确机型核心，原字体、翻译、安装文件和全部模块保持不变，仍待实机验证。
+
+- [7D 2.0.3 — r2 修正版](中文版魔灯/magiclantern.2020Dec28.7D.203.zh-CN.r2-CORE-PACKAGING-FIX-TEST-ONLY.zip)
+- [1200D 1.0.2 — r2 修正版（低内存测试）](中文版魔灯/magiclantern.2018Aug21.1200D.102.zh-CN.r2-CORE-PACKAGING-FIX-LOW-MEMORY-TEST-ONLY.zip)
+- [修复记录与校验值](source/publication-docs/LEGACY-R2-PACKAGING-FIX.md)
+
+5D3 对焦包已补上[正确的 `.123` 文件名入口](中文版魔灯/magiclantern.2025-06-20.5D3.123.zh-CN.experimental-r9.live-af-lv-gated-raw-compatible-r21-TEST-ONLY.zip)，对应佳能固件 **1.2.3**。旧 `.113` 命名文件与它内容完全相同，是文件名标记错误，不能据此用于佳能固件 1.1.3。
 
 ## 安装前必读
 

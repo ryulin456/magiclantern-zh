@@ -1,0 +1,166 @@
+{
+  "7D2.112": {
+    "module_count": 19,
+    "inherited_missing": {
+      "adv_int": [
+        "aperture_toggle",
+        "iso_toggle",
+        "shutter_toggle"
+      ],
+      "autoexpo": [
+        "get_ae_state",
+        "get_bv"
+      ],
+      "crop_rec": [
+        "patch_hook_function"
+      ],
+      "dot_tune": [
+        "get_afma",
+        "get_afma_max",
+        "get_afma_mode",
+        "get_config_afma_wide_tele",
+        "set_afma",
+        "set_afma_mode"
+      ],
+      "edmac": [
+        "CreateResLockEntry",
+        "LockEngineResources",
+        "dmaConnection",
+        "edmac_find_divider",
+        "edmac_read_chan",
+        "edmac_write_chan"
+      ],
+      "ettr": [
+        "bv_auto",
+        "bv_toggle",
+        "expo_lock_update_value",
+        "expo_override_active",
+        "raw_hist_get_percentile_levels"
+      ],
+      "mlv_lite": [
+        "CreateResLockEntry",
+        "ErrCardForLVApp_handler",
+        "edmac_copy_rectangle_adv_cleanup",
+        "edmac_copy_rectangle_cbr_start",
+        "edmac_memcpy_res_lock",
+        "edmac_memcpy_res_unlock",
+        "edmac_read_chan",
+        "edmac_write_chan",
+        "focus_box_get_raw_crop_offset",
+        "get_picstyle_name",
+        "raw_lv_redirect_edmac",
+        "raw_lv_request_bpp",
+        "raw_lv_request_digital_gain",
+        "raw_lv_settings_still_valid",
+        "srm_free_suite",
+        "srm_malloc_suite"
+      ],
+      "mlv_snd": [
+        "SetNextASIFADCBuffer",
+        "SetSamplingRate",
+        "StartASIFDMAADC"
+      ],
+      "selftest": [
+        "bv_toggle",
+        "edmac_copy_rectangle_adv_start",
+        "edmac_copy_rectangle_finish",
+        "edmac_memcpy_finish",
+        "edmac_memcpy_res_lock",
+        "edmac_memcpy_start",
+        "edmac_write_chan",
+        "srm_free_suite",
+        "srm_malloc_suite"
+      ],
+      "silent": [
+        "CreateResLockEntry",
+        "edmac_read_chan",
+        "edmac_write_chan",
+        "raw_lv_redirect_edmac",
+        "raw_lv_settings_still_valid",
+        "srm_free_suite",
+        "srm_malloc_suite"
+      ]
+    },
+    "new_missing": {}
+  },
+  "50D.109": {
+    "module_count": 17,
+    "inherited_missing": {},
+    "new_missing": {}
+  },
+  "60D.111": {
+    "module_count": 17,
+    "inherited_missing": {},
+    "new_missing": {}
+  },
+  "70D.112": {
+    "module_count": 19,
+    "inherited_missing": {},
+    "new_missing": {}
+  },
+  "100D.101": {
+    "module_count": 18,
+    "inherited_missing": {},
+    "new_missing": {}
+  },
+  "200D.101": {
+    "module_count": 4,
+    "inherited_missing": {},
+    "new_missing": {}
+  },
+  "500D.111": {
+    "module_count": 17,
+    "inherited_missing": {},
+    "new_missing": {}
+  },
+  "550D.109": {
+    "module_count": 17,
+    "inherited_missing": {},
+    "new_missing": {}
+  },
+  "600D.102": {
+    "module_count": 17,
+    "inherited_missing": {},
+    "new_missing": {}
+  },
+  "650D.104": {
+    "module_count": 18,
+    "inherited_missing": {},
+    "new_missing": {}
+  },
+  "700D.115": {
+    "module_count": 18,
+    "inherited_missing": {},
+    "new_missing": {}
+  },
+  "750D.110": {
+    "module_count": 3,
+    "inherited_missing": {},
+    "new_missing": {}
+  },
+  "1100D.105": {
+    "module_count": 13,
+    "inherited_missing": {
+      "mlv_play": [
+        "lossless_decompress_raw"
+      ],
+      "mlv_snd": [
+        "mlv_rec_get_free_slot",
+        "mlv_rec_get_slot_info",
+        "mlv_rec_release_slot",
+        "mlv_rec_set_rel_timestamp",
+        "mlv_rec_skip_frames",
+        "mlv_set_timestamp"
+      ],
+      "pic_view": [
+        "lossless_decompress_raw"
+      ]
+    },
+    "new_missing": {}
+  },
+  "EOSM.202": {
+    "module_count": 18,
+    "inherited_missing": {},
+    "new_missing": {}
+  }
+}

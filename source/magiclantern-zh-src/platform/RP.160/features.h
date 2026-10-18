@@ -1,0 +1,26 @@
+#define FEATURE_VRAM_RGBA
+
+#define CONFIG_COMPOSITOR_XCM
+#define CONFIG_COMPOSITOR_DEDICATED_LAYER
+#define CONFIG_COMPOSITOR_XCM_V2
+
+#define FEATURE_SHOW_SHUTTER_COUNT
+
+#define CONFIG_TSKMON
+#define FEATURE_SHOW_TASKS
+#define FEATURE_SHOW_CPU_USAGE
+#define FEATURE_SHOW_GUI_EVENTS
+
+#define FEATURE_GLOBAL_DRAW
+
+#define FEATURE_SCREENSHOT
+
+#define CONFIG_CRASH_LOG
+
+// We can't yet rely on image capture.  Cam crashes due to null pointer,
+// I think?  If it fails to AF lock, for example.
+#define CONFIG_IMAGE_CAPTURE_NOT_WORKING
+
+#undef CONFIG_ADDITIONAL_VERSION
+#undef CONFIG_PROP_REQUEST_CHANGE
+#undef CONFIG_AUTOBACKUP_ROM

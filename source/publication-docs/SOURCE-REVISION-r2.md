@@ -1,0 +1,1 @@
+本轮仅修改既有打包脚本 scripts/package_legacy_localized_release.py，并同步原工作区。其余相机实现代码未改。首轮原脚本见 history/package_legacy_localized_release.original.py；本轮更新版本映射、修复说明、哈希清单。

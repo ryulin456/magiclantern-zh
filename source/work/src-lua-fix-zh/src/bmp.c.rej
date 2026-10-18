@@ -1,0 +1,101 @@
+diff a/work/src-lua-fix-zh/src/bmp.c b/work/src-lua-fix-zh/src/bmp.c	(rejected hunks)
+@@ -1163,7 +1185,14 @@ static uint8_t* bfnt_find_char(int code)
+ }
+ 
+ // returns width
+-int bfnt_draw_char(int c, int px, int py, int fg, int bg)
++static int bfnt_scale_metric(int value, int target_height, int source_height)
++{
++    if (source_height <= 0 || target_height <= 0)
++        return 0;
++    return (value * target_height + source_height / 2) / source_height;
++}
++
++int bfnt_draw_char_scaled(int c, int px, int py, int fg, int bg, int target_height)
+ {
+     // It seems to me that c is used in three different ways.
+     //
+@@ -1185,7 +1214,7 @@ int bfnt_draw_char(int c, int px, int py, int fg, int bg)
+     // perhaps a different top-level function for drawing ML icons?
+ 
+     // if c < 0 we can always proceed as these are built-in via ico.c
+-    if (c >= 0 && !bfnt_ok())
++    if (c >= 0 && !(c > 0x7f && BFNT_ALT_FONT) && !bfnt_ok())
+     {
+         #ifndef PYCPARSER   /* circular dependency */
+         bmp_printf(FONT_SMALL, 0, 0, "font addr bad");
+@@ -1217,37 +1246,54 @@ int bfnt_draw_char(int c, int px, int py, int fg, int bg)
+     if (crw+xo > 100) return 0;
+     if (ch+yo > 50) return 0;
+ 
++    int scaled_cw = bfnt_scale_metric(cw, target_height, source_height);
++    int scaled_ch = bfnt_scale_metric(ch, target_height, source_height);
++    int scaled_crw = bfnt_scale_metric(crw, target_height, source_height);
++    int scaled_xo = bfnt_scale_metric(xo, target_height, source_height);
++    int scaled_yo = bfnt_scale_metric(yo, target_height, source_height);
++
++    if (scaled_cw <= 0 && cw)
++        scaled_cw = 1;
++    if (scaled_ch <= 0 && ch)
++        scaled_ch = 1;
++    if (scaled_crw <= 0 && crw)
++        scaled_crw = 1;
++
+     if (bg != NO_BG_ERASE)
+     {
+-        bmp_fill(bg, px, py, crw+xo+3, 40);
++        bmp_fill(bg, px, py, scaled_crw + scaled_xo + 3, target_height);
+     }
+ 
+-    int i,j,k;
+-    for (i = 0; i < ch; i++)
++    /* When shrinking the monochrome CJK font, visit every source pixel and
++     * map it to the destination.  This is both smaller than area sampling and
++     * guarantees that a one-pixel source stroke cannot disappear. */
++    int shrink_cjk = c > 0x7f && BFNT_ALT_FONT &&
++                     (scaled_cw < cw || scaled_ch < ch);
++    int loop_w = shrink_cjk ? cw : scaled_cw;
++    int loop_h = shrink_cjk ? ch : scaled_ch;
++    for (int y = 0; y < loop_h; y++)
+     {
+-        for (j = 0; j < bb; j++)
++        int sy = shrink_cjk ? y : y * ch / scaled_ch;
++        int dy = shrink_cjk ? y * scaled_ch / ch : y;
++        for (int x = 0; x < loop_w; x++)
+         {
+-            for (k = 0; k < 8; k++)
+-            {
+-                if (j*8 + k < cw)
+-                {
+-                    if ((buff[ptr+j] & (1 << (7-k))))
+-                        #ifdef CONFIG_VXWORKS
+-                        bmp_putpixel_fast(bvram, px+j*8+k+xo, py + (i+yo)*(c < 0 ? 1 : 2), fg);
+-                        #else
+-                        bmp_putpixel_fast(bvram, px+j*8+k+xo, py+i+yo, fg);
+-                        #endif
+-                }
+-            }
++            int sx = shrink_cjk ? x : x * cw / scaled_cw;
++            int dx = shrink_cjk ? x * scaled_cw / cw : x;
++            if (buff[sy * bb + sx / 8] & (1 << (7 - (sx % 8))))
++                bmp_putpixel_fast(bvram, px + dx + scaled_xo, py + dy + scaled_yo, fg);
+         }
+-        ptr += bb;
+     }
+-    return crw;
++    return scaled_crw;
+ }
+ 
+-int bfnt_char_get_width(int c)
++int bfnt_draw_char(int c, int px, int py, int fg, int bg)
+ {
+-    if (!bfnt_ok())
++    return bfnt_draw_char_scaled(c, px, py, fg, bg, 40);
++}
++
++int bfnt_char_get_width_scaled(int c, int target_height)
++{
++    if (!(c > 0x7f && BFNT_ALT_FONT) && !bfnt_ok())
+     {
+         #ifdef FEATURE_VRAM_RGBA
+             /**

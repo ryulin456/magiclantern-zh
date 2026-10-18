@@ -1,0 +1,28 @@
+This module uses DryOS msg queues as the primary synchronisation and
+serialisation primitive.  I have found this makes thinking about the code
+considerably easier compared to mlv_lite.  Especially for the threaded parts!
+
+To ensure clean separation, we split into several major files.  The on-cam,
+async event handling is one, a single-threaded handler for the serialised
+events is another, and lastly library code for the MLV format itself.
+
+State should be kept as local as possible, avoid as many globals as possible.
+Use as many file locals as possible, and don't make them extern.
+
+event_pusher.c: vsync and key press events are read here, and any required actions
+                pushed to the queue.
+
+worker.c: reads events and dispatches them.  Holds the state of the recording session.
+          This is the only thing that can modify the state.  Since there's a single worker
+          task, there are no race conditions changing state.
+          This file is allowed to use FIO functions.
+
+mlv_3.c: holds MLV functions.  This is intended to be a clean split, so that the other
+         components know almost nothing about MLV file format.  The intention is this
+         will become much closer to an MLV library than the existing implementation.
+         As part of this, we avoid using any FIO functions.
+
+raw_vid.c: holds the top-level module stuff, init funcs etc.
+
+mlv_3_sample_code/ holds test programs that can build and run on host,
+using the MLV library.

@@ -1,0 +1,64 @@
+diff a/work/src-lua-fix-zh/src/module.c b/work/src-lua-fix-zh/src/module.c	(rejected hunks)
+@@ -1771,40 +1832,44 @@ static int module_show_about_page(int mod_number)
+ 
+             int fnt_special = FONT(FONT_MED, COLOR_CYAN, COLOR_BLACK);
+ 
+-            bmp_printf(FONT_LARGE, 10, 10, "%s", name);
+-            big_bmp_printf(FONT_MED | FONT_ALIGN_JUSTIFIED | FONT_TEXT_WIDTH(690), 10, 60, "%s", desc);
++            bmp_printf(FONT_LARGE, 10, 10, "%s", menu_translate(name));
+ 
+-            int xm = 710 - max_width_value * font_med.width;
+-            int xl = 710 - max_width * font_med.width;
++            int xm = 710 - max_width_value;
++            int xl = 710 - max_width;
+             xm = xm - xl + 10;
+             xl = 10;
+ 
+-            int lines_for_update_msg;
+-            if (module_last_update == NULL)
+-                lines_for_update_msg = 2;
+-            else
+-                lines_for_update_msg = strchr(module_last_update, '\n') ? 3 : 2;
++            int footer_lines = num_extra_strings;
++            if (module_build_date && module_build_user)
++                footer_lines += 2;
++            if (module_last_update)
++                footer_lines += strchr(module_last_update, '\n') ? 2 : 1;
+ 
+-            int yr = 480 - (num_extra_strings + lines_for_update_msg) * font_med.height;
++            int yr = 480 - footer_lines * font_med.height;
++            module_draw_wrapped_text(FONT_MED, 10, 60, 690, yr - 5, desc);
+ 
+             for (strings = module_list[mod_number].strings ; strings->name != NULL; strings++)
+             {
+                 if (!module_is_special_string(strings->name))
+                 {
+-                    bmp_printf(fnt_special, xl, yr, "%s", strings->name);
+-                    bmp_printf(fnt_special, xm, yr, ": %s", strings->value);
++                    bmp_printf(fnt_special, xl, yr, "%s", menu_translate(strings->name));
++                    bmp_printf(fnt_special, xm, yr, "：%s", strings->value);
+                     yr += font_med.height;
+                 }
+             }
+-            
+-            if (module_build_date && module_build_user)
++
++            if (module_last_update)
+             {
+-                bmp_printf(fnt_special, 10, 480-font_med.height, "Built on %s by %s.", module_build_date, module_build_user);
++                char update_line[256];
++                snprintf(update_line, sizeof(update_line), "最后更新：%s", module_last_update);
++                yr = module_draw_wrapped_text(fnt_special, 10, yr, 690, 480, update_line);
+             }
+-            
+-            if (module_last_update)
++
++            if (module_build_date && module_build_user)
+             {
+-                bmp_printf(fnt_special, 10, 480-font_med.height * lines_for_update_msg, "Last update: %s", module_last_update);
++                bmp_printf(fnt_special, 10, yr, "构建时间：%s", module_build_date);
++                yr += font_med.height;
++                bmp_printf(fnt_special, 10, yr, "构建者：%s", module_build_user);
+             }
+             
+             return 1;

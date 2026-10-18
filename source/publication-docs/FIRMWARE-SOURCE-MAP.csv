@@ -1,0 +1,22 @@
+﻿camera,latest_revision,source_tree,package,package_sha256,evidence
+100D.101,r2 FULL-MODULES,magiclantern-zh-src,magiclantern.2025-06-20.100D.101.zh-CN.r2-FULL-MODULES-TEST-ONLY.zip,6014b3157ad86e2efb99de14527367529f11281680a418713a57a0e708da27b9,核心和全部模块匹配本地编译产物
+1100D.105,r2 FULL-MODULES,magiclantern-zh-src,magiclantern.2025-06-20.1100D.105.zh-CN.r2-FULL-MODULES-TEST-ONLY.zip,11741ed199ff02883f996ddf00ce85ed3b8b4baf2a9fb10f204e7af01508ef8a,核心和全部模块匹配本地编译产物
+1200D.102,r2 CORE-PACKAGING-FIX LOW-MEMORY,work/src-1200D-zh,magiclantern.2018Aug21.1200D.102.zh-CN.r2-CORE-PACKAGING-FIX-LOW-MEMORY-TEST-ONLY.zip,c3208f6c496f39507a349e0c0df67faf066f05e342b17ad3a3b7c7cd7513432c,r2 已修复核心选择；核心和全部模块匹配
+200D.101,r2 FULL-MODULES,magiclantern-zh-src,magiclantern.2025-06-20.200D.101.zh-CN.r2-FULL-MODULES-TEST-ONLY.zip,b035da24a3002743ce4f679b8ec84bea9e204387ecd6ae6b8446afff8163fe5e,核心和全部模块匹配本地编译产物
+500D.111,r2 FULL-MODULES,magiclantern-zh-src,magiclantern.2025-06-20.500D.111.zh-CN.r2-FULL-MODULES-TEST-ONLY.zip,60f11c5761b340fd521086d2347c46b3ece13e20dfd54db3084ee45a1342506d,核心和全部模块匹配本地编译产物
+50D.109,r2 FULL-MODULES,magiclantern-zh-src,magiclantern.2025-06-20.50D.109.zh-CN.r2-FULL-MODULES-TEST-ONLY.zip,024f4d893dc8602d51e419b7a10a5b02c8c8e160b7ebc021ef39413209770dff,核心和全部模块匹配本地编译产物
+550D.109,r3 LOW-MEMORY,magiclantern-zh-src,magiclantern.2025-06-20.550D.109.zh-CN.r3-FULL-MODULES-LOW-MEMORY-TEST-ONLY.zip,e178b0aa42bb115340b3836200b61a6d61195136b9592d44847fea504988c5a9,核心和全部模块匹配本地编译产物
+5D2.212,r1,magiclantern-zh-src,magiclantern.2025-06-20.5D2.212.zh-CN.r1-FULL-MODULES-TEST-ONLY.zip,98b1d09f3a92949eb2415928a2e4d1d3a02ccfbe0afc52153ff4ec4a252c564b,核心和全部模块匹配本地编译产物
+5D3.123,experimental-r9 + Live AF r21,magiclantern-zh-src (AF and later localization only),magiclantern.2025-06-20.5D3.123.zh-CN.experimental-r9.live-af-lv-gated-raw-compatible-r21-TEST-ONLY.zip,a722ced95892d9c902ea236fff555dd7ab1825faf88f99f1295ab0266595ed9a,AF r21 可复现；旧 r9 汉化核心源码缺失
+5D4.133,r1 DEVELOPER-BOOT-TEST,magiclantern-5d4-zh-40c0a133-v2,magiclantern.5D4.133.zh-CN.r1-DEVELOPER-BOOT-TEST.zip,3907477942a088cb083bbbdf0b1613aeb61d8eecb8388d47da3cf5389971b47a,核心和全部模块匹配本地编译产物
+600D.102,r2 FULL-MODULES,magiclantern-zh-src,magiclantern.2025-06-20.600D.102.zh-CN.r2-FULL-MODULES-TEST-ONLY.zip,64bbbec81e7ef27963e0bc6d64aee039f240538e1d347e53d2b0e310902acf08,核心和全部模块匹配本地编译产物
+60D.111,r2 FULL-MODULES,magiclantern-zh-src,magiclantern.2025-06-20.60D.111.zh-CN.r2-FULL-MODULES-TEST-ONLY.zip,a975391d796f5c10559fc5a230e123e29a5bc8349721391a162b19a7e2c0b4fd,核心和全部模块匹配本地编译产物
+650D.104,r2 FULL-MODULES,magiclantern-zh-src,magiclantern.2025-06-20.650D.104.zh-CN.r2-FULL-MODULES-TEST-ONLY.zip,3aaf3d5d54590946dbf9a9e2dd06a2d1d188f713d2fc29ab16ad05a79e0f4632,核心和全部模块匹配本地编译产物
+6D.116,r4,magiclantern-zh-src,magiclantern.2025-06-20.6D.116.zh-CN.r4-TEST-ONLY.zip,c586ead67f2a5df689a7a0e0a5ee62e3a354965f8ddb0f4bedb629ab77f2361f,核心和全部模块匹配本地编译产物
+6D2.111,r3 font-layout,magiclantern-zh-src,magiclantern.2025-06-20.6D2.111.zh-CN.r3-font-layout-TEST-ONLY.zip,fb207814c9ad2615ae1e0af9b09bf66df1193c18f960b501bf52096ff610f4fe,核心和全部模块匹配本地编译产物
+700D.115,r2 FULL-MODULES,magiclantern-zh-src,magiclantern.2025-06-20.700D.115.zh-CN.r2-FULL-MODULES-TEST-ONLY.zip,f418012806572e63d84311470677d82e523d98fbaf1dd1b03954aa6e91f026ed,核心和全部模块匹配本地编译产物
+70D.112,r3 MEMORY-SAFE,magiclantern-zh-src,magiclantern.2025-06-20.70D.112.zh-CN.r3-MEMORY-SAFE-REALCAM-TEST.zip,7cc8b62d2705766f1185597c2cfa89e1b1726d506fbc386be85c1738b4d86520,核心和全部模块匹配本地编译产物
+750D.110,r2 FULL-MODULES,magiclantern-zh-src,magiclantern.2025-06-20.750D.110.zh-CN.r2-FULL-MODULES-TEST-ONLY.zip,3537f90f897036715ce29e79dc2fd9514ecfb3fc5904497888efde3659e43411,核心和全部模块匹配本地编译产物
+7D.203,r2 CORE-PACKAGING-FIX,work/src-lua-fix-zh,magiclantern.2020Dec28.7D.203.zh-CN.r2-CORE-PACKAGING-FIX-TEST-ONLY.zip,45ed53ef84b8697c506ecbfcd46cda5a1a7b1140bc8662c39380001f69429088,r2 已修复核心选择；核心和全部模块匹配
+7D2.112,r2 FULL-MODULES,magiclantern-zh-src,magiclantern.2025-06-20.7D2.112.zh-CN.r2-FULL-MODULES-TEST-ONLY.zip,c6567158f077d5bd4e757387419c73881e43e3a0afef82016787e4d4863a0528,核心和全部模块匹配本地编译产物
+EOSM.202,r2 FULL-MODULES,magiclantern-zh-src,magiclantern.2025-06-20.EOSM.202.zh-CN.r2-FULL-MODULES-TEST-ONLY.zip,278728e553d574606ade11d90d9f99f8a9b66b85504b52cb5c9aaff662069749,核心和全部模块匹配本地编译产物

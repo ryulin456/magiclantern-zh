@@ -1,0 +1,26 @@
+[
+  {
+    "camera": "7D.203",
+    "package": "magiclantern.2020Dec28.7D.203.zh-CN.r2-CORE-PACKAGING-FIX-TEST-ONLY.zip",
+    "sha256": "45ed53ef84b8697c506ecbfcd46cda5a1a7b1140bc8662c39380001f69429088",
+    "core_bytes": 466976,
+    "core_sha256": "55b4104bc9afbeaaa583a3f9e097907253293603efbdcd5f75cdbf01f0d07546",
+    "modules": 19,
+    "previous_package": "magiclantern.2020Dec28.7D.203.zh-CN.r1-FULL-MODULES-TEST-ONLY.zip",
+    "changed_members": [
+      "autoexec.bin"
+    ]
+  },
+  {
+    "camera": "1200D.102",
+    "package": "magiclantern.2018Aug21.1200D.102.zh-CN.r2-CORE-PACKAGING-FIX-LOW-MEMORY-TEST-ONLY.zip",
+    "sha256": "c3208f6c496f39507a349e0c0df67faf066f05e342b17ad3a3b7c7cd7513432c",
+    "core_bytes": 440160,
+    "core_sha256": "88949b5ab686ea08ec719b17aa3d97c16ed7700588f453dc4cbb402fa0b3fe94",
+    "modules": 17,
+    "previous_package": "magiclantern-.2018Aug21.1200D.102.zh-CN.r1-FULL-MODULES-LOW-MEMORY-TEST-ONLY.zip",
+    "changed_members": [
+      "autoexec.bin"
+    ]
+  }
+]
