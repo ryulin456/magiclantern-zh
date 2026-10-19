@@ -1,0 +1,72 @@
+{
+  "branches": [
+    {
+      "branch": "review/5d3-live-af-r21",
+      "base": "ed3e7c0dfacfdeaf3349dee73edf9e3621217462",
+      "head": "55381a86f2f357aaaf812db0d8c07cecb28a02ca",
+      "tree": "d1263bfbdb175306f8dbce16385e93b582361c6d",
+      "commits": [
+        {
+          "sha": "47f11d311bbd1ebf9fe718dd748b878bac194246",
+          "tree": "3afbcb041cb0215d8aed49f68eb5df080e2ec568",
+          "title": "modules: add experimental 5D3 Live AF r21"
+        },
+        {
+          "sha": "55381a86f2f357aaaf812db0d8c07cecb28a02ca",
+          "tree": "d1263bfbdb175306f8dbce16385e93b582361c6d",
+          "title": "docs: record r21 provenance and reproducible module build"
+        }
+      ],
+      "files": 7,
+      "compare": "https://github.com/ryulin456/magiclantern_simplified/compare/ed3e7c0dfacfdeaf3349dee73edf9e3621217462...55381a86f2f357aaaf812db0d8c07cecb28a02ca",
+      "branch_url": "https://github.com/ryulin456/magiclantern_simplified/tree/review/5d3-live-af-r21"
+    },
+    {
+      "branch": "review/zh-cn-2025",
+      "base": "ed3e7c0dfacfdeaf3349dee73edf9e3621217462",
+      "head": "3b679d1ae96e9c7b0a5baf24d1bee386df8fb4bb",
+      "tree": "6d5726895900ee5e9191cd0c03cd796a26ab382b",
+      "commits": [
+        {
+          "sha": "5044a4b4f459b8db1d0a88fd74f6904ab30dfdf4",
+          "tree": "6435992b020f4fba97fb7f4a9351562651e5cbe4",
+          "title": "build: update Python module text and font metadata helpers"
+        },
+        {
+          "sha": "bcaa33009a5d27428b246bdd57480d2262fe4bdc",
+          "tree": "1f965415e23023bedc8956eab0dca2c458aa979e",
+          "title": "i18n: add Simplified Chinese catalogs and font resources"
+        },
+        {
+          "sha": "d2d157f4131bf85f9220616af674a1f71b0733bf",
+          "tree": "901875dec03b23dad9a284317413bbab8c5e7356",
+          "title": "i18n: render Chinese menus and load resources from persistent memory"
+        },
+        {
+          "sha": "42cfae06110955e95d738d5bbf199415d83de912",
+          "tree": "390533ca77a31afcf23dab9708578c75719398fd",
+          "title": "modules: retain final and historical experimental AF implementations"
+        },
+        {
+          "sha": "18c29ffbe65f00d7fbbd5a42893a6a57b2380c11",
+          "tree": "67ace047f47ac7c13b80545324a70da7edee9c52",
+          "title": "build: preserve camera version identities and packaged module selection"
+        },
+        {
+          "sha": "059ab0e52abee8fc88ed266c0e00f852f8864b3b",
+          "tree": "f64696de6934a6f78f8bb616248671dbc3411b8f",
+          "title": "tools: preserve localization generators and release audits"
+        },
+        {
+          "sha": "3b679d1ae96e9c7b0a5baf24d1bee386df8fb4bb",
+          "tree": "6d5726895900ee5e9191cd0c03cd796a26ab382b",
+          "title": "docs: explain reconstructed localization review provenance"
+        }
+      ],
+      "files": 74,
+      "compare": "https://github.com/ryulin456/magiclantern_simplified/compare/ed3e7c0dfacfdeaf3349dee73edf9e3621217462...3b679d1ae96e9c7b0a5baf24d1bee386df8fb4bb",
+      "branch_url": "https://github.com/ryulin456/magiclantern_simplified/tree/review/zh-cn-2025"
+    }
+  ],
+  "archive_sha256": "de860a97d4f7fc10d0b398a5cf794e1138323f8a956eac4a8a5ad23f56614280"
+}

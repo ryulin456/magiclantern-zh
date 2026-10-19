@@ -62,6 +62,14 @@
 
 ## 源码与构建
 
+2026-10-19 已按上游审阅要求建立正式 [Fork](https://github.com/ryulin456/magiclantern_simplified)，审阅请优先使用以下差异链接：
+
+- [多机型简体中文汉化：7 个逻辑提交](https://github.com/ryulin456/magiclantern_simplified/compare/ed3e7c0dfacfdeaf3349dee73edf9e3621217462...3b679d1ae96e9c7b0a5baf24d1bee386df8fb4bb)
+- [5D3 Live AF r21 对焦模块：2 个逻辑提交](https://github.com/ryulin456/magiclantern_simplified/compare/ed3e7c0dfacfdeaf3349dee73edf9e3621217462...55381a86f2f357aaaf812db0d8c07cecb28a02ca)
+- [审阅补丁归档（含 7D / 1200D 各 5 个提交，以及单独列出的 5D4 归档差异）](source/review/magiclantern-review-patches-2026-10-19.zip)
+
+这两个分支保留真实上游提交历史；提交按现存源码重新分组，不代表找回了最初的开发提交记录。7D / 1200D 基于另一个旧上游，补丁注明各自基线。5D4 差异尚未整理为干净的上游提交。下列源码目录继续作为归档与构建资料。
+
 2026-10-18 已整理并公开四套源码树，包含多机型中文版工程、独立 5D4 开发工程，以及 **5D3 Live AF r21 自动对焦模块源码**。
 
 - [源码总览与目录](source/README.md)
