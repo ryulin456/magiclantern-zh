@@ -1,5 +1,7 @@
 # Magic Lantern 简体中文汉化与 5D3 Live AF 源码
 
+当前开发审阅请看[通用语言框架 v2](https://github.com/ryulin456/magiclantern_simplified/compare/ed3e7c0dfacfdeaf3349dee73edf9e3621217462...8809eccfb5f8d8ab71d19559c9efc88e5ed0610b)及[验证与范围说明](https://github.com/ryulin456/magiclantern_simplified/blob/8809eccfb5f8d8ab71d19559c9efc88e5ed0610b/doc/LOCALIZATION-REVIEW-V2.md)。v2 与 AF 分开，尚未实机验证；下列目录保留此前发布工程的源码归档，不代表 v2 已替换安装包。
+
 整理日期：2026-10-18。维护者：ryulin456。这里汇集本机最后保留的汉化源码、构建脚本、翻译资源及发布包对应证据，供社区审核与继续开发。
 
 **源码覆盖有明确缺口：5D3 原始 experimental-r9 汉化核心及其旧模块来自另一台电脑，本机只有相应二进制，没有找到精确对应的完整修改源码。此仓库不能宣称是全部已分发二进制的完整对应源码。** Live AF r21 的源码独立保留，已可重新编译核对。

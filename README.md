@@ -62,11 +62,13 @@
 
 ## 源码与构建
 
-2026-10-19 已按上游审阅要求建立正式 [Fork](https://github.com/ryulin456/magiclantern_simplified)，审阅请优先使用以下差异链接：
+2026-10-20 已更新审阅分支，并建立正式 [Fork](https://github.com/ryulin456/magiclantern_simplified)，审阅请优先使用以下差异链接：
 
-- [多机型简体中文汉化：7 个逻辑提交](https://github.com/ryulin456/magiclantern_simplified/compare/ed3e7c0dfacfdeaf3349dee73edf9e3621217462...3b679d1ae96e9c7b0a5baf24d1bee386df8fb4bb)
+- [通用语言框架 v2 审阅：7 个提交](https://github.com/ryulin456/magiclantern_simplified/compare/ed3e7c0dfacfdeaf3349dee73edf9e3621217462...8809eccfb5f8d8ab71d19559c9efc88e5ed0610b)
 - [5D3 Live AF r21 对焦模块：2 个逻辑提交](https://github.com/ryulin456/magiclantern_simplified/compare/ed3e7c0dfacfdeaf3349dee73edf9e3621217462...55381a86f2f357aaaf812db0d8c07cecb28a02ca)
-- [审阅补丁归档（含 7D / 1200D 各 5 个提交，以及单独列出的 5D4 归档差异）](source/review/magiclantern-review-patches-2026-10-19.zip)
+- [2026-10-19 旧版审阅补丁归档（含 7D / 1200D 及 5D4 归档差异）](source/review/magiclantern-review-patches-2026-10-19.zip)
+
+v2 是通用语言框架的审阅稿：AF 与无关工具已分离，词表和可选字体按所选语言从卡中加载；选择语言后保存设置并重启生效。它尚未实机验证，不替换现有安装包。词条覆盖与验证边界见[修订说明](https://github.com/ryulin456/magiclantern_simplified/blob/8809eccfb5f8d8ab71d19559c9efc88e5ed0610b/doc/LOCALIZATION-REVIEW-V2.md)。
 
 这两个分支保留真实上游提交历史；提交按现存源码重新分组，不代表找回了最初的开发提交记录。7D / 1200D 基于另一个旧上游，补丁注明各自基线。5D4 差异尚未整理为干净的上游提交。下列源码目录继续作为归档与构建资料。
 
