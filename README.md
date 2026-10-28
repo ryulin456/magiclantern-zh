@@ -41,6 +41,7 @@
 
 ## 项目特点
 
+- 5D3／1.2.3 新增英语、中文、德语、波兰语即时切换测试版
 - 深度汉化主菜单、隐藏模块及模块内子选项
 - 保留原有模块，不以删功能换取“可编译”
 - 针对字体缺字、文字截断与显示笔画进行发布前检查
@@ -52,7 +53,7 @@
 
 | 机型 | 当前状态 | 说明 |
 | --- | --- | --- |
-| Canon 5D Mark III | ✅ 已实机测试 | 汉化包与实验性框选自动对焦模块持续优化中 |
+| Canon 5D Mark III | ✅ 已实机测试 | 四语言 r4 已在 1.2.3 实测；旧版对焦包独立保留 |
 | Canon 5D Mark II | ✅ 已实机测试 | 基础汉化与模块加载已验证 |
 | Canon 6D | ✅ 已实机测试 | 基础汉化与模块加载已验证 |
 | Canon 6D Mark II | ✅ 已实机测试 | 基础汉化与模块加载已验证 |
@@ -62,13 +63,17 @@
 
 ## 源码与构建
 
-2026-10-20 已更新审阅分支，并建立正式 [Fork](https://github.com/ryulin456/magiclantern_simplified)，审阅请优先使用以下差异链接：
+当前新增 **5D3／佳能固件 1.2.3 四语言即时切换 r4 测试包**。默认英文，在魔灯 `Prefs → Language` 按 SET 即时切换英语、简体中文、德语和波兰语。维护者已报告 r4 实机测试正常；其他机型尚未验证此框架版本。
 
-- [通用语言框架 v2 审阅：7 个提交](https://github.com/ryulin456/magiclantern_simplified/compare/ed3e7c0dfacfdeaf3349dee73edf9e3621217462...8809eccfb5f8d8ab71d19559c9efc88e5ed0610b)
-- [5D3 Live AF r21 对焦模块：2 个逻辑提交](https://github.com/ryulin456/magiclantern_simplified/compare/ed3e7c0dfacfdeaf3349dee73edf9e3621217462...55381a86f2f357aaaf812db0d8c07cecb28a02ca)
+- [下载 5D3 四语言 r4 测试包](中文版魔灯/magiclantern.2026-10-27.5D3.123.LANG4-LIVE-r4-TEST-ONLY.zip)
+- [对应完整源码（固定提交）](https://github.com/ryulin456/magiclantern_simplified/tree/6f1bb16b853c8046a05c68f86f7ac02e4a727691) · [下载完整源码 ZIP](https://github.com/ryulin456/magiclantern_simplified/archive/6f1bb16b853c8046a05c68f86f7ac02e4a727691.zip)
+- [本次增量审阅：6 个独立提交](https://github.com/ryulin456/magiclantern_simplified/compare/8809eccfb5f8d8ab71d19559c9efc88e5ed0610b...6f1bb16b853c8046a05c68f86f7ac02e4a727691)
+- [从上游基线查看完整本地化差异](https://github.com/ryulin456/magiclantern_simplified/compare/ed3e7c0dfacfdeaf3349dee73edf9e3621217462...6f1bb16b853c8046a05c68f86f7ac02e4a727691)
+- [r4 使用方法、测试范围和 SHA256](source/publication-docs/5D3-FOUR-LANGUAGE-R4.md)
+- [5D3 Live AF r21 对焦模块：独立分支](https://github.com/ryulin456/magiclantern_simplified/compare/ed3e7c0dfacfdeaf3349dee73edf9e3621217462...55381a86f2f357aaaf812db0d8c07cecb28a02ca)
 - [2026-10-19 旧版审阅补丁归档（含 7D / 1200D 及 5D4 归档差异）](source/review/magiclantern-review-patches-2026-10-19.zip)
 
-v2 是通用语言框架的审阅稿：AF 与无关工具已分离，词表和可选字体按所选语言从卡中加载；选择语言后保存设置并重启生效。它尚未实机验证，不替换现有安装包。词条覆盖与验证边界见[修订说明](https://github.com/ryulin456/magiclantern_simplified/blob/8809eccfb5f8d8ab71d19559c9efc88e5ed0610b/doc/LOCALIZATION-REVIEW-V2.md)。
+r4 已修正子菜单选项、逐行帮助和模块介绍的漏译，词库与可选字体仍从卡中加载。请将包内 `autoexec.bin` 和 `ML` 文件夹配套更新。**此语言测试包不包含旧 r21 自动对焦改动，不是其他型号或 5D3／1.1.3 的安装包。**构建与验证细节见[源码说明](https://github.com/ryulin456/magiclantern_simplified/blob/6f1bb16b853c8046a05c68f86f7ac02e4a727691/doc/LOCALIZATION-5D3-R4.md)。
 
 这两个分支保留真实上游提交历史；提交按现存源码重新分组，不代表找回了最初的开发提交记录。7D / 1200D 基于另一个旧上游，补丁注明各自基线。5D4 差异尚未整理为干净的上游提交。下列源码目录继续作为归档与构建资料。
 

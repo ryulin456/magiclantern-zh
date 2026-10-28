@@ -1,0 +1,24 @@
+{
+  "artifact": "magiclantern.2026-10-27.5D3.123.LANG4-LIVE-r4-TEST-ONLY.zip",
+  "sha256": "01c79179014f3529aa643b886108ef1b7f92ab7e8064e2e7e7cdcdcd22d43fd2",
+  "size": 2208324,
+  "model": "Canon EOS 5D Mark III",
+  "canon_firmware": "1.2.3",
+  "source_repository": "ryulin456/magiclantern_simplified",
+  "source_commit": "6f1bb16b853c8046a05c68f86f7ac02e4a727691",
+  "source_tree": "387fc330e0ba54ddcdbc1a99bf16be012f6168b3",
+  "source_archive": "https://github.com/ryulin456/magiclantern_simplified/archive/6f1bb16b853c8046a05c68f86f7ac02e4a727691.zip",
+  "languages": [
+    "English",
+    "Simplified Chinese",
+    "Deutsch",
+    "Polski"
+  ],
+  "camera_report": {
+    "reported_by": "maintainer",
+    "r4_test_successful": true,
+    "other_models_verified": false
+  },
+  "translation_native_proofreading_pending": true,
+  "af_r21_included": false
+}
